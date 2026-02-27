@@ -59,22 +59,30 @@ export default function CreateJob() {
   useEffect(() => {
     if (isEdit) {
       fetch(`http://localhost:5000/api/hr/vacancies/${id}`)
-        .then(res => res.json())
+        .then(res => {
+          if (!res.ok) throw new Error("Failed to fetch vacancy details");
+          return res.json();
+        })
         .then(data => {
-          setJobTitle(data.title || "");
-          setCompany(data.company || COMPANIES[0]);
-          setLocation(data.location || LOCATIONS[0]);
-          setTypes(data.employeeTypes || []);
-          setDesc(data.jobDescription || "");
-          setDept(data.department || "");
-          setL1(data.l1Department || "");
-          setExpMin(data.experienceMin || 0);
-          setExpMax(data.experienceMax || 5);
-          if (data.expiresOn) {
-            setExpires(data.expiresOn.split("T")[0]);
+          if (data) {
+            setJobTitle(data.title || "");
+            setCompany(data.company || COMPANIES[0]);
+            setLocation(data.location || LOCATIONS[0]);
+            setTypes(data.employeeTypes || []);
+            setDesc(data.jobDescription || "");
+            setDept(data.department || "");
+            setL1(data.l1Department || "");
+            setExpMin(data.experienceMin || 0);
+            setExpMax(data.experienceMax || 5);
+            if (data.expiresOn) {
+              setExpires(data.expiresOn.split("T")[0]);
+            }
           }
         })
-        .catch(err => console.error("Failed to fetch vacancy", err));
+        .catch(err => {
+          console.error("Failed to fetch vacancy", err);
+          setError("Could not load vacancy details. Please check your connection.");
+        });
     }
   }, [id, isEdit]);
 
@@ -207,11 +215,15 @@ export default function CreateJob() {
               </div>
             </div>
 
-            {/* Department (readonly) */}
+            {/* Department */}
             <div>
               <Label icon={Layers} text="Department" color="#d97706" />
-              <input value={department} disabled
-                className={`${inputCls} opacity-60 cursor-not-allowed bg-gray-50`} />
+              <input
+                value={department}
+                onChange={(e) => setDept(e.target.value)}
+                placeholder="e.g. HR, Sales, IT"
+                className={inputCls}
+              />
             </div>
 
             {/* Experience */}

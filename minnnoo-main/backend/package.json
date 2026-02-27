@@ -23,6 +23,7 @@
     "json2csv": "^6.0.0-alpha.2",
     "jsonwebtoken": "^9.0.3",
     "mammoth": "^1.11.0",
+    "mongodb": "^7.1.0",
     "mongoose": "^9.1.6",
     "multer": "^2.0.2",
     "natural": "^8.1.0",

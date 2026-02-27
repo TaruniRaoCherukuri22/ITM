@@ -37,7 +37,7 @@ app.use("/uploads", express.static("uploads"));
 app.use(cookieParser());
 // MongoDB connection
 mongoose
-  .connect("mongodb://127.0.0.1:27017/minno")
+  .connect("mongodb+srv://tarunicherukuri_db_user:nZVv197DU2L3SLBE@cluster0.q3ujumr.mongodb.net/?appName=Cluster0")
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error(err));
 
