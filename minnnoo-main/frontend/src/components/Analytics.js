@@ -286,7 +286,7 @@ export default function Analytics() {
   };
 
   return (
-    <div className="px-8 pt-8 pb-16 max-w-7xl mx-auto w-full">
+    <div className="px-8 pb-16 max-w-7xl mx-auto w-full">
       {/* Header Section */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
         <div>
@@ -330,14 +330,14 @@ export default function Analytics() {
                 gradient="from-indigo-600 to-indigo-400"
               />
               <KPICard
-                title="Most Demanding Vertical"
+                title="Most Demanding Module"
                 value={stats.mostActiveLabel}
                 percentage={`${stats.percentage}% growth`}
                 icon={TrendingUp}
                 gradient="from-emerald-500 to-emerald-400"
               />
               <KPICard
-                title="Engaged Units"
+                title="Engaged Modules"
                 value={stats.labels.length}
                 icon={LayoutDashboard}
                 gradient="from-amber-500 to-amber-400"
@@ -355,7 +355,7 @@ export default function Analytics() {
             <div className="p-2 bg-indigo-50 rounded-xl">
               <PieChartIcon className="w-5 h-5 text-indigo-500" />
             </div>
-            <h3 className="text-lg font-black text-gray-800">Vertical Split</h3>
+            <h3 className="text-lg font-black text-gray-800">Module Split</h3>
           </div>
           <div className="h-[360px] relative">
             {loading ? (
@@ -374,7 +374,7 @@ export default function Analytics() {
             <div className="p-2 bg-sky-50 rounded-xl">
               <BarChart3 className="w-5 h-5 text-sky-500" />
             </div>
-            <h3 className="text-lg font-black text-gray-800">Volume by Vertical</h3>
+            <h3 className="text-lg font-black text-gray-800">Vacancies per Module</h3>
           </div>
           <div className="h-[360px]">
             {loading ? (
@@ -396,14 +396,14 @@ export default function Analytics() {
               <div className="p-2 bg-amber-50 rounded-xl">
                 <Award className="w-5 h-5 text-amber-500" />
               </div>
-              <h3 className="text-2xl font-black text-gray-800">Talent Quality Benchmarking</h3>
+              <h3 className="text-2xl font-black text-gray-800">Average ATS Score</h3>
             </div>
-            <p className="text-gray-400 text-sm font-medium">Average ATS score performance across top active roles</p>
+            <p className="text-gray-400 text-sm font-medium">Average ATS score performance across active roles</p>
           </div>
-          <div className="px-5 py-2.5 bg-indigo-50 rounded-2xl border border-indigo-100 text-indigo-600 text-[11px] font-black uppercase tracking-widest flex items-center gap-2">
+          {/* <div className="px-5 py-2.5 bg-indigo-50 rounded-2xl border border-indigo-100 text-indigo-600 text-[11px] font-black uppercase tracking-widest flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-indigo-500" />
             High Fidelity Analysis
-          </div>
+          </div> */}
         </div>
 
         <div className="h-[440px]">
@@ -427,11 +427,11 @@ export default function Analytics() {
         </div>
 
         <div className="mt-12 pt-10 border-t border-gray-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div className="space-y-1.5">
+          {/* <div className="space-y-1.5">
             <span className="text-[10px] text-gray-400 uppercase font-black tracking-widest block">Benchmarking</span>
             <span className="text-xl text-emerald-600 font-black">Score 80+</span>
             <p className="text-[11px] text-gray-400">Target Proficiency</p>
-          </div>
+          </div> */}
           <div className="space-y-1.5">
             <span className="text-[10px] text-gray-400 uppercase font-black tracking-widest block">Total Sample</span>
             <span className="text-xl text-gray-800 font-black">{vacancies?.length || 0} Openings</span>
@@ -444,14 +444,14 @@ export default function Analytics() {
             </span>
             <p className="text-[11px] text-gray-400">Weighted Average</p>
           </div>
-          <div className="space-y-1.5">
+          {/* <div className="space-y-1.5">
             <span className="text-[10px] text-gray-400 uppercase font-black tracking-widest block">Update Frequency</span>
             <div className="flex items-center gap-3">
               <span className="text-xl text-gray-800 font-black">Real-time</span>
               <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full shadow-[0_0_8px_#10b981]" />
             </div>
             <p className="text-[11px] text-gray-400">Syncing with ATS</p>
-          </div>
+          </div> */}
         </div>
       </GlassCard>
     </div>

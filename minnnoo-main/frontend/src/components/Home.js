@@ -71,7 +71,7 @@ export default function Home() {
 
   return (
     <div className="flex-1 flex flex-col relative z-10">
-      <div className="pb-24 space-y-14">
+      <div className="pb-24 space-y-10">
 
         {/* ── Top stats ── */}
         {/* <TopCards /> */}

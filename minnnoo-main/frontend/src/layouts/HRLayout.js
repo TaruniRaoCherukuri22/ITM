@@ -16,7 +16,7 @@ export default function HRLayout() {
       <div className="flex-1 flex flex-col relative z-20">
         <HrTopbar setSidebarOpen={setSidebarOpen} />
 
-        <div className="flex-1 pt-20 px-6 md:px-10 pb-20">
+        <div className="flex-1 pt-12 px-6 md:px-10 pb-20">
           <Outlet />
         </div>
       </div>

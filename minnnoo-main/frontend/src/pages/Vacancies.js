@@ -69,7 +69,7 @@ export default function Vacancies() {
   const confirmVac = vacancies.find((v) => v._id === confirmId);
 
   return (
-    <div className="py-12 px-6">
+    <div className="pb-12 px-6">
       {/* Subtle blobs */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full opacity-25 blur-3xl"

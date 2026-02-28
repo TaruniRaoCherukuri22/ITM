@@ -123,7 +123,7 @@ export default function VacancyCandidates() {
   };
 
   return (
-    <div className="flex-1 flex flex-col relative z-10 p-6 md:p-10">
+    <div className="flex-1 flex flex-col relative z-10 pb-6 px-6 md:pb-10 md:px-10">
       {/* Subtle bg shapes */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full opacity-25 blur-3xl"

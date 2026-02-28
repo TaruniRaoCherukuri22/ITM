@@ -45,7 +45,7 @@ export default function TopCards() {
   }, []);
 
   return (
-    <div className="py-10 px-6">
+    <div className="pb-10 px-6">
       <div className="max-w-7xl mx-auto space-y-8">
 
         {/* ── Header ── */}

@@ -37,9 +37,9 @@ app.use("/uploads", express.static("uploads"));
 app.use(cookieParser());
 // MongoDB connection
 mongoose
-  .connect("mongodb+srv://tarunicherukuri_db_user:nZVv197DU2L3SLBE@cluster0.q3ujumr.mongodb.net/?appName=Cluster0")
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log("MongoDB connected"))
-  .catch((err) => console.error(err));
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 
 app.use("/api/users", userRoutes);

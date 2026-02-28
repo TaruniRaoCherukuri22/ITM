@@ -121,30 +121,31 @@ export default function CreateJob() {
 
   return (
     <div className="flex-1">
-      {/* ── Header ── */}
-      <header
-        className="sticky top-16 z-20 flex items-center gap-4 px-6 py-3.5 bg-white border-b border-gray-100"
-        style={{ boxShadow: "0 1px 10px rgba(0,0,0,0.05)" }}
-      >
-        <button
-          type="button"
-          onClick={() => navigate("/home")}
-          className="flex items-center gap-1.5 text-xs font-medium text-gray-500
-                     hover:text-gray-800 transition"
-        >
-          <ChevronLeft size={15} /> Back
-        </button>
-        <div className="h-4 w-px bg-gray-200" />
-        <h1 className="text-base font-bold text-gray-800">
-          {isEdit ? "Edit Vacancy" : "Create Job Vacancy"}
-        </h1>
-      </header>
-
-      {/* ── Page bg ── */}
+      {/* ── Main Content ── */}
       <main
-        className="min-h-screen flex justify-center py-10 px-4"
+        className="min-h-screen flex flex-col items-center pb-16 px-4"
         style={{ background: "linear-gradient(135deg,#f8fafc 0%,#f1f5f9 60%,#e0f2fe 100%)" }}
       >
+        <div className="w-full max-w-2xl py-10">
+          <button
+            type="button"
+            onClick={() => navigate("/home")}
+            className="flex items-center gap-1.5 text-xs font-semibold text-gray-400
+                       hover:text-blue-600 transition-colors mb-4 uppercase tracking-widest"
+          >
+            <ChevronLeft size={14} /> Back to Dashboard
+          </button>
+
+          <h1 className="text-3xl font-black text-gray-800 tracking-tight">
+            {isEdit ? "Edit Vacancy" : "Create Job Vacancy"}
+          </h1>
+          <p className="text-gray-500 text-sm mt-2 font-medium">
+            {isEdit
+              ? "Update the details and requirements for this position."
+              : "Fill in the details below to publish a new job opportunity."}
+          </p>
+        </div>
+
         <form
           onSubmit={submit}
           className="w-full max-w-2xl space-y-6"

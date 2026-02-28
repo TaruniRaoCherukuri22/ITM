@@ -65,7 +65,7 @@ export default function TopEmployeesHR() {
   };
 
   return (
-    <div className="py-12 space-y-8">
+    <div className="pb-12 space-y-8">
       {/* Blobs */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full opacity-25 blur-3xl"
